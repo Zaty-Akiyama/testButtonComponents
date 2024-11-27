@@ -1,13 +1,22 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src", // src ディレクトリを基準にする
+    "baseUrl": "./", // src ディレクトリを基準にする
     "paths": {
-      "~/*": ["*"]  // ~ を src から解決する
+      "~/*": ["src/*"]  // ~ を src から解決する
     },
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
     "jsx": "react-jsx",
     "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "esModuleInterop": true
   },
   "include": ["src"]
 }
