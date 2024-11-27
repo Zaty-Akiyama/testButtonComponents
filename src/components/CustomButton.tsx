@@ -66,7 +66,7 @@ const CustomButton = ({
   }
 
   return (
-    <div className={style.root}>
+    <>
       {
         href
         ? (
@@ -92,7 +92,7 @@ const CustomButton = ({
           </button>
         )
       }
-    </div>
+    </>
   );
 };
 
