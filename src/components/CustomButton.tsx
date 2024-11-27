@@ -48,11 +48,11 @@ const CustomButton = ({
 
   const buttonContent: JSX.Element = (
     <>
-      {iconLeft && <span className={style.iconLeft}>{iconLeft}</span>}
-      <span className={classnames(style.label, isLoading && style.loading)}>
+      {iconLeft && <span className={classnames(style.icon, style.iconLeft)}>{iconLeft}</span>}
+      <span>
         {isLoading ? (loadingLabel || 'ローディング中') : label}
       </span>
-      {iconRight && <span className={style.iconRight}>{iconRight}</span>}
+      {iconRight && <span className={classnames(style.icon, style.iconRight)}>{iconRight}</span>}
     </>
   );
 
