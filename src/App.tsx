@@ -97,6 +97,16 @@ const App = () => {
         <div className={style.largeButton}>
           <CustomButton label="編集" onClick={handleClick}/>
         </div>
+        <form action="#" className={style.form}>
+          <h2>フォーム送信ボタン</h2>
+          <label htmlFor="email">
+            メールアドレス
+            <input type="text" id="email" name="email"/>
+          </label>
+          <div className={style.submitButton}>
+            <CustomButton label="送信" type="submit" color='border'/>
+          </div>
+        </form>
       </div>
     </>
   )
