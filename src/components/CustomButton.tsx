@@ -1,3 +1,4 @@
+import { MouseEventHandler } from 'react';
 import style from '~/components/CustomButton.module.scss';
 import classnames from '~/utilities/classnames';
 
@@ -12,7 +13,7 @@ interface CustomButtonProps {
   iconRight?: JSX.Element;
   href?: string;
   target?: '_blank' | '_self' | '_parent' | '_top';
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 };
 
 /**
@@ -56,6 +57,14 @@ const CustomButton = ({
     </>
   );
 
+  const handleClick: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement> = (e) => {
+    if (isDisabled) {
+      e.preventDefault();
+      return;
+    }
+    onClick(e);
+  }
+
   return (
     <div className={style.root}>
       {
@@ -66,7 +75,8 @@ const CustomButton = ({
             href={href}
             aria-disabled={isDisabled}
             target={target}
-            onClick={isDisabled ? undefined : onClick}
+            onClick={handleClick}
+            tabIndex={isDisabled ? -1 : 0}
           >
             {buttonContent}
           </a>
@@ -76,7 +86,7 @@ const CustomButton = ({
             className={classnames(style.button, style[color], isDisabled && style.disabled)}
             type={type}
             disabled={isDisabled}
-            onClick={isDisabled ? undefined : onClick}
+            onClick={handleClick}
           >
             {buttonContent}
           </button>
