@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src", // src ディレクトリを基準にする
+    "paths": {
+      "~/*": ["*"]  // ~ を src から解決する
+    },
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
